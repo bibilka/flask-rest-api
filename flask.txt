@@ -1,0 +1,11 @@
+запуск
+flask run
+
+инициализация бд
+flask db init
+
+создание миграции
+flask db migrate -m "users table"
+
+применение миграции
+flask db upgrade
