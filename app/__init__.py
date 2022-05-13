@@ -2,7 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_restful import Api
-# from flask_jwt_extended import JWTManager
+from flask_jwt_extended import JWTManager
 from config import Config
 
 # инициализируем приложение, и объект для реализации rest api, и подключаем конфигурацию
@@ -15,7 +15,7 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 # jwt
-# jwt = JWTManager(app)
+jwt = JWTManager(app)
 
 # подключаем обработчик ошибок и файл с роутами
 from app import handler, routes
@@ -24,3 +24,4 @@ from models.speciality import Speciality
 from models.qualification import Qualification
 from models.education_form import EducationForm
 from models.group import Group
+from models.revoked_token import RevokedToken

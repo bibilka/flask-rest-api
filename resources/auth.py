@@ -1,6 +1,8 @@
 from flask_restful import Resource, abort, reqparse
 from models.user import User
+from models.revoked_token import RevokedToken
 from app import db
+from flask_jwt_extended import create_access_token, create_refresh_token, jwt_required, get_jwt_identity, get_jwt
 
 parser = reqparse.RequestParser()
 parser.add_argument('login', help='Обязательно укажите логин', required=True)
@@ -26,26 +28,46 @@ class UserRegistration(Resource):
 class UserLogin(Resource):
     def post(self):
         data = parser.parse_args()
-        user = User.query.get(data['login'])
+        user = User.query.filter_by(login=data['login']).first()
 
         if user and user.check_password(data['password']):
-            return True
+            # создаем токены
+            access_token = create_access_token(identity=data['login'])
+            refresh_token = create_refresh_token(identity=data['login'])
+            return {
+                'msg': 'Авторизация прошла успешно',
+                'access_token': access_token,
+                'refresh_token': refresh_token
+            }
         else:
             return {'msg': 'Данные неверны'}, 401
 
 
+# отозвать токен доступа
 class UserLogoutAccess(Resource):
+    @jwt_required()
     def post(self):
-        return {'message': 'User logout'}
+        revoked_token = RevokedToken(jti=get_jwt()['jti'])
+        db.session.add(revoked_token)
+        db.session.commit()
+        return {'msg': 'Токен доступа аннулирован'}
 
 
+# отозвать refresh токен
 class UserLogoutRefresh(Resource):
+    @jwt_required(refresh=True)
     def post(self):
-        return {'message': 'User logout'}
+        revoked_token = RevokedToken(jti=get_jwt()['jti'])
+        db.session.add(revoked_token)
+        db.session.commit()
+        return {'msg': 'Refresh токен аннулирован'}
 
 
 # обновление токена доступа
 class TokenRefresh(Resource):
+    @jwt_required(refresh=True)
     def post(self):
-        return {'message': 'Token refresh'}
+        current_user = get_jwt_identity()
+        access_token = create_access_token(identity=current_user)
+        return {'access_token': access_token}
 

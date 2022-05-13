@@ -1,12 +1,14 @@
 from flask_restful import Resource, reqparse, abort
 from models.speciality import Speciality
 from app import db
+from flask_jwt_extended import jwt_required
 
 
 # Класс-ресурс для работы со специальностью
 class SpecialityResource(Resource):
 
     # метод GET для получения информации по специальности по id
+    @jwt_required()
     def get(self, speciality_id):
         return Speciality.serialize(
             Speciality.query.filter_by(id=speciality_id).first_or_404(
@@ -19,10 +21,12 @@ class SpecialityResource(Resource):
 class SpecialityListResource(Resource):
 
     # метод GET для получения списка всех специальностей
+    @jwt_required()
     def get(self):
         return [Speciality.serialize(item) for item in Speciality.query.all()]
 
     # метод POST для создания новой специальности
+    @jwt_required()
     def post(self):
         parser = reqparse.RequestParser()
         # валидируем данные
