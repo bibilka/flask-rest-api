@@ -5,7 +5,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 
 class Config(object):
-    SECRET_KEY = os.urandom(24)
+    SECRET_KEY = os.environ.get('SECRET_KEY')
     JWT_SECRET_KEY = SECRET_KEY
 
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
@@ -15,4 +15,6 @@ class Config(object):
     JWT_BLACKLIST_ENABLED = True
     JWT_BLACKLIST_TOKEN_CHECKS = ['access', 'token']
 
-    JWT_ACCESS_TOKEN_EXPIRES = datetime.timedelta(seconds=int(os.environ.get('JWT_ACCESS_TOKEN_EXPIRES')))
+    jwt_expires = os.environ.get('JWT_ACCESS_TOKEN_EXPIRES')
+    if (jwt_expires):
+        JWT_ACCESS_TOKEN_EXPIRES = datetime.timedelta(seconds=int(jwt_expires))

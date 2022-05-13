@@ -4,10 +4,10 @@ from app import db
 # Класс модель - специальность (направление подготовки)
 class Speciality(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    # текстовое поле - направление подготовки бакалавра (уникальный индекс)
-    name = db.Column(db.String(150), index=True, unique=True)
-    # текстовое поле - профиль подготовки
-    profile = db.Column(db.String(150))
+    # текстовое поле - направление подготовки бакалавра
+    name = db.Column(db.String(150))
+    # текстовое поле - профиль подготовки (уникальный индекс)
+    profile = db.Column(db.String(150), index=True, unique=True)
 
     # метод для сериализации объекта
     def serialize(self):
