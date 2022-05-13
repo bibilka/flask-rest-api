@@ -4,9 +4,9 @@ from models.user import User
 from models.qualification import Qualification
 from models.education_form import EducationForm
 
-db.session.add(
-    User(login="user", password="password")
-)
+user = User(login="user")
+user.set_password("password")
+db.session.add(user)
 
 db.session.add(
     Speciality(name="Информатика и вычислительная техника", profile="Теоретические основы информатики")

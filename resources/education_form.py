@@ -66,4 +66,4 @@ class EducationFormListResource(Resource):
         # создаем новой квалификации в бд
         db.session.add(new_education_form)
         db.session.commit()
-        return {'msg': 'Квалификация успешно добавлена', 'data': new_education_form.serialize()}, 201
+        return {'msg': 'Форма обучения успешно добавлена', 'data': new_education_form.serialize()}, 201
