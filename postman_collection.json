@@ -1,10 +1,1085 @@
 {
 	"info": {
-		"_postman_id": "9c0718b3-be43-44e1-ad53-6bf81b2e1e00",
+		"_postman_id": "084e0624-f1dc-4cb0-bcde-763cab3bcf5c",
 		"name": "Flask REST API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
+		{
+			"name": "Specialities",
+			"item": [
+				{
+					"name": "GET ALL",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MjQ3NzUwOSwianRpIjoiNGFjZWZiOTEtOGRiNy00YTY1LThjZDgtMGMzMzBjMzVlOTIyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InVzZXIiLCJuYmYiOjE2NTI0Nzc1MDksImV4cCI6MTY1MjQ3ODEwOX0.jRYJZ944Pf682KKLnzBYrIa1ejjU68KfjRQvbYqgV_c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/specialities",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"specialities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BY ID",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MjQ3NzUwOSwianRpIjoiNGFjZWZiOTEtOGRiNy00YTY1LThjZDgtMGMzMzBjMzVlOTIyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InVzZXIiLCJuYmYiOjE2NTI0Nzc1MDksImV4cCI6MTY1MjQ3ODEwOX0.jRYJZ944Pf682KKLnzBYrIa1ejjU68KfjRQvbYqgV_c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/specialities/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"specialities",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE NEW",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MjQ3NzUwOSwianRpIjoiNGFjZWZiOTEtOGRiNy00YTY1LThjZDgtMGMzMzBjMzVlOTIyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InVzZXIiLCJuYmYiOjE2NTI0Nzc1MDksImV4cCI6MTY1MjQ3ODEwOX0.jRYJZ944Pf682KKLnzBYrIa1ejjU68KfjRQvbYqgV_c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test\",\r\n    \"profile\": \"test\"\r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/specialities",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"specialities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MjQ3NzUwOSwianRpIjoiNGFjZWZiOTEtOGRiNy00YTY1LThjZDgtMGMzMzBjMzVlOTIyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InVzZXIiLCJuYmYiOjE2NTI0Nzc1MDksImV4cCI6MTY1MjQ3ODEwOX0.jRYJZ944Pf682KKLnzBYrIa1ejjU68KfjRQvbYqgV_c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test\",\r\n    \"profile\": \"test\"\r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/specialities/4",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"specialities",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MjYzMzI0NSwianRpIjoiYjJmODJhMjEtMWI0Mi00ZGI0LTg0YzctY2QyNTIxZjM5OWI0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InVzZXIiLCJuYmYiOjE2NTI2MzMyNDUsImV4cCI6MTY1MjYzNDE0NX0.thhQfGVvCRZFWWTVJpYLT6UWbSmqmFjtsHNxSLQR-Gc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/specialities/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"specialities",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET GROUPS",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MjYzMzI0NSwianRpIjoiYjJmODJhMjEtMWI0Mi00ZGI0LTg0YzctY2QyNTIxZjM5OWI0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InVzZXIiLCJuYmYiOjE2NTI2MzMyNDUsImV4cCI6MTY1MjYzNDE0NX0.thhQfGVvCRZFWWTVJpYLT6UWbSmqmFjtsHNxSLQR-Gc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/specialities/2/groups",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"specialities",
+								"2",
+								"groups"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Qualifications",
+			"item": [
+				{
+					"name": "GET ALL",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MjQ3NzUwOSwianRpIjoiNGFjZWZiOTEtOGRiNy00YTY1LThjZDgtMGMzMzBjMzVlOTIyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InVzZXIiLCJuYmYiOjE2NTI0Nzc1MDksImV4cCI6MTY1MjQ3ODEwOX0.jRYJZ944Pf682KKLnzBYrIa1ejjU68KfjRQvbYqgV_c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/qualifications",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"qualifications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BY ID",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MjQ3NzUwOSwianRpIjoiNGFjZWZiOTEtOGRiNy00YTY1LThjZDgtMGMzMzBjMzVlOTIyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InVzZXIiLCJuYmYiOjE2NTI0Nzc1MDksImV4cCI6MTY1MjQ3ODEwOX0.jRYJZ944Pf682KKLnzBYrIa1ejjU68KfjRQvbYqgV_c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/qualifications/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"qualifications",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE NEW",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MjQ3NzUwOSwianRpIjoiNGFjZWZiOTEtOGRiNy00YTY1LThjZDgtMGMzMzBjMzVlOTIyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InVzZXIiLCJuYmYiOjE2NTI0Nzc1MDksImV4cCI6MTY1MjQ3ODEwOX0.jRYJZ944Pf682KKLnzBYrIa1ejjU68KfjRQvbYqgV_c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test\"\r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/qualifications",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"qualifications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MjQ3ODEyMiwianRpIjoiMTliNzQ0MDktOGQ5Yy00MGJlLTk3ZDMtMzJhNGVhOTM2ZmJkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InVzZXIiLCJuYmYiOjE2NTI0NzgxMjIsImV4cCI6MTY1MjQ3ODcyMn0.TBCMUremFcecnpDXJqRAImaMdbkL3x6uW-AjfNAYOOQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test\"\r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/qualifications/3",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"qualifications",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MjQ3ODEyMiwianRpIjoiMTliNzQ0MDktOGQ5Yy00MGJlLTk3ZDMtMzJhNGVhOTM2ZmJkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InVzZXIiLCJuYmYiOjE2NTI0NzgxMjIsImV4cCI6MTY1MjQ3ODcyMn0.TBCMUremFcecnpDXJqRAImaMdbkL3x6uW-AjfNAYOOQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/qualifications/3",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"qualifications",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET GROUPS",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MjYzMzI0NSwianRpIjoiYjJmODJhMjEtMWI0Mi00ZGI0LTg0YzctY2QyNTIxZjM5OWI0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InVzZXIiLCJuYmYiOjE2NTI2MzMyNDUsImV4cCI6MTY1MjYzNDE0NX0.thhQfGVvCRZFWWTVJpYLT6UWbSmqmFjtsHNxSLQR-Gc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/qualifications/3/groups",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"qualifications",
+								"3",
+								"groups"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EducationForms",
+			"item": [
+				{
+					"name": "GET ALL",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MjQ3ODMwOSwianRpIjoiMWUzZDcwZTItMWI3Ny00MjU0LTgzZTYtOGNmN2E4Mzk3OTFhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InVzZXIiLCJuYmYiOjE2NTI0NzgzMDksImV4cCI6MTY1MjQ3ODkwOX0.ZuDpycUdXjIXDASzktqtvcXGjPQ15no-QKoroCA92ak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/education_forms",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"education_forms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BY ID",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MjQ3ODMwOSwianRpIjoiMWUzZDcwZTItMWI3Ny00MjU0LTgzZTYtOGNmN2E4Mzk3OTFhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InVzZXIiLCJuYmYiOjE2NTI0NzgzMDksImV4cCI6MTY1MjQ3ODkwOX0.ZuDpycUdXjIXDASzktqtvcXGjPQ15no-QKoroCA92ak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/education_forms/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"education_forms",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE NEW",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MjQ3ODMwOSwianRpIjoiMWUzZDcwZTItMWI3Ny00MjU0LTgzZTYtOGNmN2E4Mzk3OTFhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InVzZXIiLCJuYmYiOjE2NTI0NzgzMDksImV4cCI6MTY1MjQ3ODkwOX0.ZuDpycUdXjIXDASzktqtvcXGjPQ15no-QKoroCA92ak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test2\"\r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/education_forms",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"education_forms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MjQ3ODEyMiwianRpIjoiMTliNzQ0MDktOGQ5Yy00MGJlLTk3ZDMtMzJhNGVhOTM2ZmJkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InVzZXIiLCJuYmYiOjE2NTI0NzgxMjIsImV4cCI6MTY1MjQ3ODcyMn0.TBCMUremFcecnpDXJqRAImaMdbkL3x6uW-AjfNAYOOQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test234\"\r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/education_forms/5",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"education_forms",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MjQ3ODEyMiwianRpIjoiMTliNzQ0MDktOGQ5Yy00MGJlLTk3ZDMtMzJhNGVhOTM2ZmJkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InVzZXIiLCJuYmYiOjE2NTI0NzgxMjIsImV4cCI6MTY1MjQ3ODcyMn0.TBCMUremFcecnpDXJqRAImaMdbkL3x6uW-AjfNAYOOQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/education_forms/5",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"education_forms",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET GROUPS",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MjYzMzI0NSwianRpIjoiYjJmODJhMjEtMWI0Mi00ZGI0LTg0YzctY2QyNTIxZjM5OWI0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InVzZXIiLCJuYmYiOjE2NTI2MzMyNDUsImV4cCI6MTY1MjYzNDE0NX0.thhQfGVvCRZFWWTVJpYLT6UWbSmqmFjtsHNxSLQR-Gc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/education_forms/1/groups",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"education_forms",
+								"1",
+								"groups"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Groups",
+			"item": [
+				{
+					"name": "GET ALL",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MjYzMzI0NSwianRpIjoiYjJmODJhMjEtMWI0Mi00ZGI0LTg0YzctY2QyNTIxZjM5OWI0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InVzZXIiLCJuYmYiOjE2NTI2MzMyNDUsImV4cCI6MTY1MjYzNDE0NX0.thhQfGVvCRZFWWTVJpYLT6UWbSmqmFjtsHNxSLQR-Gc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/groups",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BY ID",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MjYzMzI0NSwianRpIjoiYjJmODJhMjEtMWI0Mi00ZGI0LTg0YzctY2QyNTIxZjM5OWI0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InVzZXIiLCJuYmYiOjE2NTI2MzMyNDUsImV4cCI6MTY1MjYzNDE0NX0.thhQfGVvCRZFWWTVJpYLT6UWbSmqmFjtsHNxSLQR-Gc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/groups/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"groups",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE NEW",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MjYzMzI0NSwianRpIjoiYjJmODJhMjEtMWI0Mi00ZGI0LTg0YzctY2QyNTIxZjM5OWI0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InVzZXIiLCJuYmYiOjE2NTI2MzMyNDUsImV4cCI6MTY1MjYzNDE0NX0.thhQfGVvCRZFWWTVJpYLT6UWbSmqmFjtsHNxSLQR-Gc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ИСТ-431\",\r\n    \"faculty\": \"КТИиБ\",\r\n    \"course\": 4,\r\n    \"students_count\": 10,\r\n    \"subgroups_count\": 2,\r\n    \"speciality_id\": 1,\r\n    \"qualification_id\": 2,\r\n    \"education_form_id\": 1\r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/groups",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MjYzMzI0NSwianRpIjoiYjJmODJhMjEtMWI0Mi00ZGI0LTg0YzctY2QyNTIxZjM5OWI0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InVzZXIiLCJuYmYiOjE2NTI2MzMyNDUsImV4cCI6MTY1MjYzNDE0NX0.thhQfGVvCRZFWWTVJpYLT6UWbSmqmFjtsHNxSLQR-Gc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ИСТ-431\",\r\n    \"faculty\": \"КТИиБ\",\r\n    \"course\": 4,\r\n    \"students_count\": 5,\r\n    \"subgroups_count\": 2,\r\n    \"speciality_id\": 1,\r\n    \"qualification_id\": 2,\r\n    \"education_form_id\": 1\r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/groups/3",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"groups",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MjYzMzI0NSwianRpIjoiYjJmODJhMjEtMWI0Mi00ZGI0LTg0YzctY2QyNTIxZjM5OWI0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InVzZXIiLCJuYmYiOjE2NTI2MzMyNDUsImV4cCI6MTY1MjYzNDE0NX0.thhQfGVvCRZFWWTVJpYLT6UWbSmqmFjtsHNxSLQR-Gc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/groups/2",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"groups",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
 		{
 			"name": "Login",
 			"protocolProfileBehavior": {
@@ -34,17 +1109,11 @@
 					"raw": "{\r\n    \"login\": \"user\",\r\n    \"password\": \"password\"\r\n}"
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/api/login",
-					"protocol": "http",
+					"raw": "{{URL}}/login",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{URL}}"
 					],
-					"port": "5000",
 					"path": [
-						"api",
 						"login"
 					]
 				}
@@ -53,9 +1122,20 @@
 		},
 		{
 			"name": "Register",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n    \"login\": \"user\",\r\n    \"password\": \"password\"\r\n}",
@@ -66,22 +1146,175 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/api/registration",
-					"protocol": "http",
+					"raw": "{{URL}}/registration",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{URL}}"
 					],
-					"port": "5000",
 					"path": [
-						"api",
 						"registration"
 					]
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Token Refresh",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MjQ3Njk1OSwianRpIjoiNDk2MDZiMzEtZWFlNi00NjI0LWIzYjYtYjNjYzhmMWEzY2VmIiwidHlwZSI6InJlZnJlc2giLCJzdWIiOiJ1c2VyIiwibmJmIjoxNjUyNDc2OTU5LCJleHAiOjE2NTUwNjg5NTl9.gHZIDjVbno78Qox2JSIP9iU_kpvo2AoYaA8ixU4X5Vc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/token/refresh",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"token",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout Access Token",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MjQ3Njk1OSwianRpIjoiNjQ4MTczOTItNzliOS00OWU5LTlhY2EtY2QwZWMzOGUxMzc3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InVzZXIiLCJuYmYiOjE2NTI0NzY5NTksImV4cCI6MTY1MjQ3NzU1OX0.crqo6c65bTL7jWjoogU-WGZn_ezUSpYHpbBoCirqRy8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/logout/access",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"logout",
+						"access"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout Refresh Token",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MjQ3Njk1OSwianRpIjoiNDk2MDZiMzEtZWFlNi00NjI0LWIzYjYtYjNjYzhmMWEzY2VmIiwidHlwZSI6InJlZnJlc2giLCJzdWIiOiJ1c2VyIiwibmJmIjoxNjUyNDc2OTU5LCJleHAiOjE2NTUwNjg5NTl9.gHZIDjVbno78Qox2JSIP9iU_kpvo2AoYaA8ixU4X5Vc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/logout/refresh",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"logout",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://127.0.0.1:5000/api",
+			"type": "default"
 		}
 	]
 }

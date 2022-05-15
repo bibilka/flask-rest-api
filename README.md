@@ -5,6 +5,7 @@
 ## Требования
 - [Python 3.9.x](https://www.python.org/downloads/)
 - [Git](https://git-scm.com)
+- [Ngrok](https://ngrok.com/download) - опциально, для деплоя веб-сервера в сети
 
 ## Деплой проекта
 
@@ -49,12 +50,12 @@ flask db upgrade
 flask run
 ```
 #### Дополнительно:
-заполнение базы данных значениями:
+- заполнение базы данных значениями:
 ```
 python db_seeder.py
 ```
 
-для разработки:
+- для разработки:
 ```
 # создание базы данных
 flask db init
@@ -63,6 +64,11 @@ flask db init
 flask db migrate -m "custom migration message"
 ```
 
+- для деплоя в сети:
+```
+./ngrok config add-authtoken <token>
+./ngrok http 5000
+```
 _____
 :white_check_mark: <b>Готово!</b> :+1: :tada: 
 

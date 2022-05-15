@@ -39,9 +39,12 @@ class QualificationResource(Resource):
     # метод DELETE для удаления квалификации по ID
     @jwt_required()
     def delete(self, qualification_id):
-        Qualification.query.filter_by(id=qualification_id).first_or_404(
+        qualification = Qualification.query.filter_by(id=qualification_id).first_or_404(
             description='Квалификация не найдена'
         )
+        if qualification.groups:
+            abort(422, error='Нельзя удалить данную квалификацию, так как она закреплена за одной или несколькими '
+                             'группами')
         Qualification.query.filter_by(id=qualification_id).delete()
         db.session.commit()
         return {'msg': 'Квалификация удалена'}, 200
@@ -67,3 +70,19 @@ class QualificationListResource(Resource):
         db.session.add(new_qualification)
         db.session.commit()
         return {'msg': 'Квалификация успешно добавлена', 'data': new_qualification.serialize()}, 201
+
+
+# Класс-ресурс для получения групп заданной квалификации
+class QualificationGroups(Resource):
+
+    # метод GET для получения списка групп для специальности по ID
+    @jwt_required()
+    def get(self, qualification_id):
+        qualification = Qualification.query.filter_by(id=qualification_id).first_or_404(
+            description='Квалификация не найдена'
+        )
+        return {
+            'qualification_id': qualification_id,
+            'qualification_name': qualification.name,
+            'groups': [group.serialize_for_qualification() for group in qualification.groups]
+        }

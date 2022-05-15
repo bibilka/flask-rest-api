@@ -7,6 +7,9 @@ class EducationForm(db.Model):
     # текстовое поле - форма обучения (уникальный индекс)
     name = db.Column(db.String(150), index=True, unique=True)
 
+    # связь с группами
+    groups = db.relationship("Group", back_populates="education_form")
+
     # метод для сериализации объекта
     def serialize(self):
         return {

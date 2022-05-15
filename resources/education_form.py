@@ -39,9 +39,13 @@ class EducationFormResource(Resource):
     # метод DELETE для удаления формы обучения по ID
     @jwt_required()
     def delete(self, education_form_id):
-        EducationForm.query.filter_by(id=education_form_id).first_or_404(
+        education_form = EducationForm.query.filter_by(id=education_form_id).first_or_404(
             description='Форма обучения не найдена'
         )
+        if education_form.groups:
+            abort(422,
+                  error='Нельзя удалить данную форму обучения, так как она закреплена за одной или несколькими '
+                        'группами')
         EducationForm.query.filter_by(id=education_form_id).delete()
         db.session.commit()
         return {'msg': 'Форма обучения удалена'}, 200
@@ -67,3 +71,19 @@ class EducationFormListResource(Resource):
         db.session.add(new_education_form)
         db.session.commit()
         return {'msg': 'Форма обучения успешно добавлена', 'data': new_education_form.serialize()}, 201
+
+
+# Класс-ресурс для получения групп заданной формы обучения
+class EducationFormGroups(Resource):
+
+    # метод GET для получения списка групп для специальности по ID
+    @jwt_required()
+    def get(self, education_form_id):
+        education_form = EducationForm.query.filter_by(id=education_form_id).first_or_404(
+            description='Форма обучения не найдена'
+        )
+        return {
+            'education_form_id': education_form_id,
+            'education_form_name': education_form.name,
+            'groups': [group.serialize_for_education_form() for group in education_form.groups]
+        }

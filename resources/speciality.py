@@ -42,9 +42,13 @@ class SpecialityResource(Resource):
     # метод DELETE для удаления специальности по ID
     @jwt_required()
     def delete(self, speciality_id):
-        Speciality.query.filter_by(id=speciality_id).first_or_404(
+        speciality = Speciality.query.filter_by(id=speciality_id).first_or_404(
             description='Специальность не найдена'
         )
+        if speciality.groups:
+            abort(422, error='Нельзя удалить данную специальность, так как она закреплена за одной или несколькими '
+                             'группами')
+
         Speciality.query.filter_by(id=speciality_id).delete()
         db.session.commit()
         return {'msg': 'Специальность удалена'}, 200
@@ -70,3 +74,19 @@ class SpecialityListResource(Resource):
         db.session.add(new_spec)
         db.session.commit()
         return {'msg': 'Специальность успешно добавлена', 'data': new_spec.serialize()}, 201
+
+
+# Класс-ресурс для получения групп заданной специальности
+class SpecialityGroups(Resource):
+
+    # метод GET для получения списка групп для специальности по ID
+    @jwt_required()
+    def get(self, speciality_id):
+        speciality = Speciality.query.filter_by(id=speciality_id).first_or_404(
+            description='Специальность не найдена'
+        )
+        return {
+            'speciality_id': speciality_id,
+            'speciality_name': speciality.name,
+            'groups': [group.serialize_for_speciality() for group in speciality.groups]
+        }
